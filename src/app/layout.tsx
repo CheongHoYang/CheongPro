@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cheongpro.vercel.app'),
   title: "정호양 | PM & Frontend Developer Portfolio",
   description: "서비스 기획과 프론트엔드 개발을 함께하는 정호양의 포트폴리오입니다. React, Next.js, TypeScript를 활용한 웹 개발 경험을 소개합니다.",
   keywords: ["포트폴리오", "프론트엔드", "개발자", "React", "Next.js", "TypeScript", "PM", "서비스기획"],
@@ -52,11 +53,12 @@ export const metadata: Metadata = {
     description: '서비스 기획과 프론트엔드 개발을 함께하는 정호양의 포트폴리오입니다.',
     images: ['/og-image.jpg'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
