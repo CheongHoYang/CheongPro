@@ -2,102 +2,108 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Profile Section */}
+        <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mb-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Profile Photo */}
+            <div className="flex-shrink-0">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-200 dark:border-blue-800">
+                <Image
+                  src="/profile.jpg" // 여기에 이미지 파일명을 입력하세요
+                  alt="정프로 프로필 사진"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  priority
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                />
+              </div>
+            </div>
+            
+            {/* Profile Info */}
+            <div className="flex-1 space-y-4">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  I AM <span className="text-blue-600 dark:text-blue-400">정프로</span>
+                </h1>
+                <p className="text-lg text-gray-600 dark:text-gray-300">
+                  포지션: PM 서비스 기획 / FE Developer(jr)
+                </p>
+              </div>
+              
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                  Contact
+                </h3>
+                <div className="space-y-2">
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Email: leepro@naver.com
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Phone: +082 - 1234-5678
+                  </p>
+                </div>
+              </div>
+              
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                  Channel
+                </h3>
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">SNS:</span>
+                    <div className="flex gap-2">
+                      <div className="w-8 h-6 bg-gray-200 dark:bg-gray-700 rounded border"></div>
+                      <div className="w-8 h-6 bg-gray-200 dark:bg-gray-700 rounded border"></div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">GitHub:</span>
+                    <div className="w-8 h-6 bg-gray-200 dark:bg-gray-700 rounded border"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* Introduce Section */}
+        <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Introduce</h2>
+          <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              안녕하세요! 저는 서비스 기획과 프론트엔드 개발을 함께 하는 정프로입니다. 
+              사용자 중심의 서비스를 기획하고, 이를 직접 구현해보는 것을 좋아합니다. 
+              PM으로서의 기획 경험과 개발자로서의 기술적 역량을 바탕으로 
+              더 나은 사용자 경험을 제공하는 서비스를 만들고자 합니다.
+            </p>
+          </div>
+        </section>
+
+        {/* Tech Skill Section */}
+        <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Tech Skill</h2>
+          <div className="flex flex-wrap gap-4">
+            {[
+              { name: 'JS', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' },
+              { name: 'TS', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+              { name: 'React', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200' },
+              { name: 'Tailwind CSS', color: 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200' },
+              { name: 'Premiere Pro', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200' }
+            ].map((skill, index) => (
+              <button
+                key={index}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-md ${skill.color}`}
+              >
+                {skill.name}
+              </button>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
